@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Replace with your actual Zapier webhook URL
-const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/XXXXX/YYYYY';
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/5580520/2varpy9/';
 
 app.use(cors());
 app.use(express.json());
