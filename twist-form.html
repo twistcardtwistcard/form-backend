@@ -1,0 +1,80 @@
+<div class="form-wrapper">
+<h2>Pay for your order with your TWIST CARD</h2>
+<p id="orderDetails"></p>
+<div class="form-container">
+<div class="form-logo-top">
+<img src="https://cdn.shopify.com/s/files/1/0745/9635/2225/files/Twist_500ppx.jpg?v=1748980607"/>
+</div>
+<!-- STEP 1 -->
+<form id="paymentForm">
+<div class="notice hidden" id="autoFillNotice">
+<strong>These fields should be auto filled.</strong><br/>
+        To pay with your card, click on the link provided in your order confirmation.
+      </div>
+<div style="background: #eef3f7; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem;">
+<div class="form-group">
+<label for="orderno">Order Number</label>
+<input id="orderno" readonly="" type="text"/>
+</div>
+<div class="form-group">
+<label for="amount">Amount</label>
+<input id="amount" readonly="" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label for="cardNumber">Card Number (XXXX XXXX XXXX XXX)</label>
+<input id="cardNumber" maxlength="19" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="expiration">Expiration Date (MM/YY)</label>
+<input id="expiration" placeholder="MM/YY" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="twist">TWIST Code (XXXX)</label>
+<input id="twist" maxlength="4" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="name">Cardholder Name</label>
+<input id="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="otpPhone">Phone Number (format: +1XXXXXXXXXX)</label>
+<input id="otpPhone" required="" type="text"/>
+<button onclick="sendOTP()" type="button">Send OTP</button>
+</div>
+<div class="form-group">
+<label for="otpCode">Enter OTP</label>
+<input id="otpCode" required="" type="text"/>
+<button onclick="verifyOTP()" type="button">Verify OTP</button>
+<p id="otpStatus" style="margin-top: 0.5rem; font-weight: bold;"></p>
+</div>
+<button disabled="" id="submitBtn" type="submit">Submit Payment</button>
+<div class="hidden" id="loadingSpinner" style="text-align:center; margin-top: 1rem;">
+<div class="spinner"></div>
+<p>Processing your payment...</p>
+</div>
+</form>
+<!-- STEP 2 -->
+<div class="hidden" id="confirmationStep" style="text-align:center;">
+<h3>STEP 2 — We are validating your information.</h3>
+<div class="spinner"></div>
+<p>Please wait a second for your confirmation.</p>
+</div>
+<!-- STEP 3 -->
+<div class="hidden" id="confirmationSuccess" style="text-align:center;">
+<h2>✅ Transaction Approved</h2>
+<p>Thank you! Your payment was successfully processed.</p>
+</div>
+<div class="hidden" id="confirmationDenied" style="text-align:center;">
+<h2>❌ Transaction Denied</h2>
+<p>Please contact Twist card customer service.</p>
+</div>
+<div class="form-logo-bottom">
+<img src="https://cdn.shopify.com/s/files/1/0745/9635/2225/files/Twist_500ppx.jpg?v=1748980607"/>
+</div>
+</div>
+</div>
